@@ -11,6 +11,8 @@ const ChatPreview = () => {
     { text: "These changes will add the ArrowUpCircle icon from the lucide-react library and display it only when there's text in the input (i.e., when `isTyping` is true). The icon will appear alongside the existing Paperclip and Zap icons.", sender: 'gpt' },
     { text: "add this third icon, when the input has text see image", sender: 'user' },
     { text: "clicking on the ArrowUpCircle should send user to a new pag that should look exactly like this (see image):", sender: 'gpt' },
+    { text: "Here's an example of how to add the icon:\n```jsx\nimport { ArrowUpCircle } from 'lucide-react';\n\n// Inside your component\n{isTyping && (\n  <ArrowUpCircle\n    className=\"w-5 h-5 text-gray-400 cursor-pointer\"\n    onClick={() => navigate('/chat-preview')}\n  />\n)}\n```", sender: 'gpt' },
+    { text: "And here's how you might style the new page:\n```jsx\n<div className=\"h-screen bg-black text-white flex\">\n  <div className=\"w-1/2 p-4 overflow-y-auto\">\n    {/* Chat messages */}\n  </div>\n  <div className=\"w-1/2 p-4 border-l border-gray-700\">\n    {/* Preview iframe */}\n    <iframe src=\"/\" className=\"w-full h-full border-0\" />\n  </div>\n</div>\n```", sender: 'gpt' },
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const [isResizing, setIsResizing] = useState(false);
