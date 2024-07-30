@@ -5,7 +5,13 @@ import { ArrowUpCircle, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 
 const ChatPreview = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    { text: "To add the third icon (an arrow pointing upwards) when the input has text, we need to modify the GPTEngineer component. We'll add a new icon and make it visible only when there's text in the input.", sender: 'gpt' },
+    { text: "Here are the concise SEARCH/REPLACE blocks, with only a few lines of context:", sender: 'gpt' },
+    { text: "These changes will add the ArrowUpCircle icon from the lucide-react library and display it only when there's text in the input (i.e., when `isTyping` is true). The icon will appear alongside the existing Paperclip and Zap icons.", sender: 'gpt' },
+    { text: "add this third icon, when the input has text see image", sender: 'user' },
+    { text: "clicking on the ArrowUpCircle should send user to a new pag that should look exactly like this (see image):", sender: 'gpt' },
+  ]);
   const [inputMessage, setInputMessage] = useState('');
   const [isResizing, setIsResizing] = useState(false);
 
@@ -25,7 +31,7 @@ const ChatPreview = () => {
               <div className="flex-grow overflow-y-auto mb-4">
                 {messages.map((message, index) => (
                   <div key={index} className={`mb-2 ${message.sender === 'user' ? 'text-right' : 'text-left'}`}>
-                    <span className="inline-block bg-gray-800 rounded-lg px-4 py-2">{message.text}</span>
+                    <span className={`inline-block rounded-lg px-4 py-2 ${message.sender === 'user' ? 'bg-blue-600' : 'bg-gray-800'}`}>{message.text}</span>
                   </div>
                 ))}
               </div>
