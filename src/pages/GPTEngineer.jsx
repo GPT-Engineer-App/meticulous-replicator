@@ -45,36 +45,38 @@ const GPTEngineer = () => {
         )}
 
         <div className={`mb-12 relative ${isTyping ? 'h-40' : ''}`}>
-          <textarea
-            value={message}
-            onChange={(e) => {
-              setMessage(e.target.value);
-              setIsTyping(e.target.value.length > 0);
-            }}
-            onFocus={() => setIsInputFocused(true)}
-            onBlur={() => {
-              setIsInputFocused(false);
-              if (message.length === 0) setIsTyping(false);
-            }}
-            className={`bg-gray-800 border-none text-white pl-4 pr-20 py-6 rounded-lg w-full resize-none ${
-              isTyping ? 'h-32' : 'h-16'
-            }`}
-          />
-          {(!isInputFocused && !message) && (
-            <div className="absolute left-4 top-5 text-gray-400 pointer-events-none">
-              Message GPT Engineer...
+          <div className="relative">
+            <textarea
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+                setIsTyping(e.target.value.length > 0);
+              }}
+              onFocus={() => setIsInputFocused(true)}
+              onBlur={() => {
+                setIsInputFocused(false);
+                if (message.length === 0) setIsTyping(false);
+              }}
+              className={`bg-gray-800 border-none text-white pl-4 pr-20 py-6 rounded-lg w-full resize-none ${
+                isTyping ? 'h-32' : 'h-16'
+              }`}
+            />
+            {(!isInputFocused && !message) && (
+              <div className="absolute left-4 top-5 text-gray-400 pointer-events-none">
+                Message GPT Engineer...
+              </div>
+            )}
+            <div className="absolute right-4 bottom-4 flex items-center space-x-2">
+              <Paperclip className="w-5 h-5 text-gray-400 cursor-pointer" />
+              <Zap className="w-5 h-5 text-gray-400 cursor-pointer" />
             </div>
-          )}
-          <div className="absolute right-4 bottom-4 flex items-center space-x-2">
-            <Paperclip className="w-5 h-5 text-gray-400 cursor-pointer" />
-            <Zap className="w-5 h-5 text-gray-400 cursor-pointer" />
+            {isTyping && (
+              <div className="absolute left-4 bottom-4 flex items-center space-x-2">
+                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">Configure</Button>
+                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">Clear</Button>
+              </div>
+            )}
           </div>
-          {isTyping && (
-            <div className="absolute left-4 bottom-4 flex items-center space-x-2">
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">Configure</Button>
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">Clear</Button>
-            </div>
-          )}
         </div>
 
         <div className="flex space-x-4 mb-8">
