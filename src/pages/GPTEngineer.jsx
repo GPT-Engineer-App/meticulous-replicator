@@ -1,12 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Sparkles, Table2, Wrench, Paperclip, Zap } from 'lucide-react';
+import { Sparkles, Table2, Wrench, Paperclip, Zap, ArrowUp } from 'lucide-react';
 
 const GPTEngineer = () => {
   const [message, setMessage] = useState('');
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const projects = [
     { name: 'confetti-fun-factory', creator: 'Viktor Eriksson', time: '5 minutes ago', gradient: 'from-purple-500 to-pink-500' },
@@ -113,6 +135,15 @@ const GPTEngineer = () => {
           </a>
         </div>
       </footer>
+      {showScrollTop && (
+        <Button
+          className="fixed bottom-4 right-4 p-2 bg-gray-800 text-white rounded-full shadow-lg"
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-6 h-6" />
+        </Button>
+      )}
     </div>
   );
 };
