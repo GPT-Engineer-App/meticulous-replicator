@@ -72,8 +72,8 @@ const GPTEngineer = () => {
           </div>
           {isTyping && (
             <div className="absolute left-4 bottom-4 flex items-center space-x-2">
-              <Button variant="ghost" size="sm">Configure</Button>
-              <Button variant="ghost" size="sm">Clear</Button>
+              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">Configure</Button>
+              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">Clear</Button>
             </div>
           )}
         </div>
