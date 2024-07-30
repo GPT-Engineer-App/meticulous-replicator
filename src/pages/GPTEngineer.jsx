@@ -56,13 +56,12 @@ const GPTEngineer = () => {
               setIsInputFocused(false);
               if (message.length === 0) setIsTyping(false);
             }}
-            placeholder={isInputFocused || message ? "" : "Message GPT Engineer..."}
             className={`bg-gray-800 border-none text-white pl-4 pr-20 py-6 rounded-lg w-full resize-none ${
               isTyping ? 'h-32' : 'h-16'
             }`}
           />
           {(!isInputFocused && !message) && (
-            <div className="absolute left-4 top-8 text-gray-400 pointer-events-none">
+            <div className="absolute left-4 top-5 text-gray-400 pointer-events-none">
               Message GPT Engineer...
             </div>
           )}
