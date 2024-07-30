@@ -5,6 +5,7 @@ import { Sparkles, Table2, Wrench, Paperclip, Zap } from 'lucide-react';
 
 const GPTEngineer = () => {
   const [message, setMessage] = useState('');
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   const projects = [
     { name: 'confetti-fun-factory', creator: 'Viktor Eriksson', time: '5 minutes ago', gradient: 'from-purple-500 to-pink-500' },
@@ -44,9 +45,16 @@ const GPTEngineer = () => {
           <Input
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Message GPT Engineer..."
+            onFocus={() => setIsInputFocused(true)}
+            onBlur={() => setIsInputFocused(false)}
+            placeholder={isInputFocused || message ? "" : "Message GPT Engineer..."}
             className="bg-gray-800 border-none text-white pl-4 pr-20 py-6 rounded-full"
           />
+          {(!isInputFocused && !message) && (
+            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+              Message GPT Engineer...
+            </div>
+          )}
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
             <Paperclip className="w-5 h-5 text-gray-400 cursor-pointer" />
             <Zap className="w-5 h-5 text-gray-400 cursor-pointer" />
