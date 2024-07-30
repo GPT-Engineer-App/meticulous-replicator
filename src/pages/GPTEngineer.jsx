@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Sparkles, Table2, Wrench, Paperclip, Zap, ArrowUp } from 'lucide-react';
+import { Sparkles, Table2, Wrench, Paperclip, Zap, ArrowUp, ArrowUpCircle } from 'lucide-react';
 
 const GPTEngineer = () => {
   const [message, setMessage] = useState('');
@@ -91,6 +91,9 @@ const GPTEngineer = () => {
             <div className="absolute right-4 bottom-4 flex items-center space-x-2">
               <Paperclip className="w-5 h-5 text-gray-400 cursor-pointer" />
               <Zap className="w-5 h-5 text-gray-400 cursor-pointer" />
+              {isTyping && (
+                <ArrowUpCircle className="w-5 h-5 text-gray-400 cursor-pointer" />
+              )}
             </div>
             {isTyping && (
               <div className="absolute left-4 bottom-4 flex items-center space-x-2">
