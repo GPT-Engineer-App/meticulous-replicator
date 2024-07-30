@@ -11,6 +11,10 @@ const GPTEngineer = () => {
     { name: 'vibey-confetti-factory', creator: 'Viktor Eriksson', time: '7 minutes ago', gradient: 'from-gray-700 to-gray-900' },
     { name: 'confetti-carnival-fun', creator: 'Viktor Eriksson', time: '7 minutes ago', gradient: 'from-purple-500 to-pink-500' },
     { name: 'confetti-festivity-burst', creator: 'Viktor Eriksson', time: '8 minutes ago', gradient: 'from-purple-500 to-pink-500' },
+    { name: 'ai-powered-chatbot', creator: 'Emma Watson', time: '10 minutes ago', gradient: 'from-blue-500 to-teal-500' },
+    { name: 'neural-network-visualizer', creator: 'Alan Turing', time: '15 minutes ago', gradient: 'from-green-500 to-yellow-500' },
+    { name: 'quantum-algorithm-simulator', creator: 'Richard Feynman', time: '20 minutes ago', gradient: 'from-red-500 to-orange-500' },
+    { name: 'blockchain-explorer', creator: 'Satoshi Nakamoto', time: '25 minutes ago', gradient: 'from-indigo-500 to-purple-500' },
   ];
 
   return (
