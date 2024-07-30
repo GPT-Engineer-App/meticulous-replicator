@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Sparkles, Table2, Wrench, Shoe } from 'lucide-react';
+import { Sparkles, Table2, Wrench } from 'lucide-react';
 
 const GPTEngineer = () => {
   const [message, setMessage] = useState('');
@@ -33,7 +33,7 @@ const GPTEngineer = () => {
           <ProjectCard icon={<Table2 />} text="A tool to upload and edit CSV files" color="text-green-500" />
           <ProjectCard icon={<Table2 />} text="A page showing top stories from Hacker News" color="text-orange-500" />
           <ProjectCard icon={<Wrench />} text="Create a boilerplate app I can easily modify" color="text-blue-500" />
-          <ProjectCard icon={<Shoe />} text="A tool to help me manage my sneaker addiction" color="text-pink-500" />
+          <ProjectCard icon={<Wrench />} text="A tool to help me manage my project tasks" color="text-pink-500" />
         </div>
 
         <div className="mb-12">
