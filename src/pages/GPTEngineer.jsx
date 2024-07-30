@@ -6,6 +6,7 @@ import { Sparkles, Table2, Wrench, Paperclip, Zap } from 'lucide-react';
 const GPTEngineer = () => {
   const [message, setMessage] = useState('');
   const [isInputFocused, setIsInputFocused] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
 
   const projects = [
     { name: 'confetti-fun-factory', creator: 'Viktor Eriksson', time: '5 minutes ago', gradient: 'from-purple-500 to-pink-500' },
@@ -34,31 +35,47 @@ const GPTEngineer = () => {
       <main>
         <h1 className="text-5xl font-bold mb-12">What do you want <span className="text-yellow-500">to</span> <span className="text-green-500">build</span>?</h1>
 
-        <div className="grid grid-cols-4 gap-4 mb-8">
-          <ProjectCard icon={<Table2 />} text="A tool to upload and edit CSV files" color="text-green-500" />
-          <ProjectCard icon={<Table2 />} text="A page showing top stories from Hacker News" color="text-orange-500" />
-          <ProjectCard icon={<Wrench />} text="Create a boilerplate app I can easily modify" color="text-blue-500" />
-          <ProjectCard icon={<Wrench />} text="A tool to help me manage my project tasks" color="text-pink-500" />
-        </div>
+        {!isTyping && (
+          <div className="grid grid-cols-4 gap-4 mb-8">
+            <ProjectCard icon={<Table2 />} text="A tool to upload and edit CSV files" color="text-green-500" />
+            <ProjectCard icon={<Table2 />} text="A page showing top stories from Hacker News" color="text-orange-500" />
+            <ProjectCard icon={<Wrench />} text="Create a boilerplate app I can easily modify" color="text-blue-500" />
+            <ProjectCard icon={<Wrench />} text="A tool to help me manage my project tasks" color="text-pink-500" />
+          </div>
+        )}
 
-        <div className="mb-12 relative">
-          <Input
+        <div className={`mb-12 relative ${isTyping ? 'h-40' : ''}`}>
+          <textarea
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e) => {
+              setMessage(e.target.value);
+              setIsTyping(e.target.value.length > 0);
+            }}
             onFocus={() => setIsInputFocused(true)}
-            onBlur={() => setIsInputFocused(false)}
+            onBlur={() => {
+              setIsInputFocused(false);
+              if (message.length === 0) setIsTyping(false);
+            }}
             placeholder={isInputFocused || message ? "" : "Message GPT Engineer..."}
-            className="bg-gray-800 border-none text-white pl-4 pr-20 py-6 rounded-full"
+            className={`bg-gray-800 border-none text-white pl-4 pr-20 py-6 rounded-lg w-full resize-none ${
+              isTyping ? 'h-32' : 'h-16'
+            }`}
           />
           {(!isInputFocused && !message) && (
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+            <div className="absolute left-4 top-8 text-gray-400 pointer-events-none">
               Message GPT Engineer...
             </div>
           )}
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+          <div className="absolute right-4 bottom-4 flex items-center space-x-2">
             <Paperclip className="w-5 h-5 text-gray-400 cursor-pointer" />
             <Zap className="w-5 h-5 text-gray-400 cursor-pointer" />
           </div>
+          {isTyping && (
+            <div className="absolute left-4 bottom-4 flex items-center space-x-2">
+              <Button variant="ghost" size="sm">Configure</Button>
+              <Button variant="ghost" size="sm">Clear</Button>
+            </div>
+          )}
         </div>
 
         <div className="flex space-x-4 mb-8">
