@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Sparkles, Table2, Wrench } from 'lucide-react';
+import { Sparkles, Table2, Wrench, Paperclip, Zap } from 'lucide-react';
 
 const GPTEngineer = () => {
   const [message, setMessage] = useState('');
@@ -36,13 +36,17 @@ const GPTEngineer = () => {
           <ProjectCard icon={<Wrench />} text="A tool to help me manage my project tasks" color="text-pink-500" />
         </div>
 
-        <div className="mb-12">
+        <div className="mb-12 relative">
           <Input
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Message GPT Engineer..."
-            className="bg-gray-800 border-none text-white"
+            className="bg-gray-800 border-none text-white pl-4 pr-20 py-6 rounded-full"
           />
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+            <Paperclip className="w-5 h-5 text-gray-400 cursor-pointer" />
+            <Zap className="w-5 h-5 text-gray-400 cursor-pointer" />
+          </div>
         </div>
 
         <div className="flex space-x-4 mb-8">
