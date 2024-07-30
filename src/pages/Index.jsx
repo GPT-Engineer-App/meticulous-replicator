@@ -1,4 +1,4 @@
-import { Heart, ArrowUpRight, Twitter, Github, Discord, Youtube, Linkedin } from "lucide-react";
+import { Heart, ArrowUpRight, Twitter, Github, Youtube, Linkedin } from "lucide-react";
 
 const Index = () => {
   return (
@@ -108,7 +108,6 @@ const Index = () => {
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-white"><Twitter className="w-5 h-5" /></a>
               <a href="#" className="text-gray-400 hover:text-white"><Github className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-400 hover:text-white"><Discord className="w-5 h-5" /></a>
               <a href="#" className="text-gray-400 hover:text-white"><Youtube className="w-5 h-5" /></a>
               <a href="#" className="text-gray-400 hover:text-white"><Linkedin className="w-5 h-5" /></a>
             </div>
