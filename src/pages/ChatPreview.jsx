@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowUpCircle, ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowUpCircle, ArrowLeft, ArrowRight, Heart } from 'lucide-react';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 
 const ChatPreview = () => {
@@ -17,7 +17,21 @@ const ChatPreview = () => {
   };
 
   return (
-    <div className="h-screen bg-black text-white">
+    <div className="h-screen bg-black text-white flex flex-col">
+      <nav className="bg-gray-900 p-4">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center">
+            <Heart className="w-6 h-6 mr-2 text-pink-500" />
+            <span className="font-semibold text-xl">lovable</span>
+          </div>
+          <ul className="flex space-x-4">
+            <li><a href="/" className="hover:text-gray-300">Home</a></li>
+            <li><a href="/gpt-engineer" className="hover:text-gray-300">GPT Engineer</a></li>
+            <li><a href="#" className="hover:text-gray-300">About</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div className="flex-grow">
       <PanelGroup direction="horizontal">
         <Panel defaultSize={50} minSize={30}>
           <div className="h-full p-4">
@@ -66,7 +80,8 @@ const ChatPreview = () => {
         </Panel>
       </PanelGroup>
     </div>
-  );
+  </div>
+);
 };
 
 export default ChatPreview;
