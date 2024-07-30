@@ -35,7 +35,7 @@ const ChatPreview = () => {
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   placeholder="Type your message..."
-                  className="flex-grow mr-2"
+                  className="flex-grow mr-2 text-black"
                 />
                 <Button onClick={handleSendMessage}>
                   <ArrowUpCircle className="w-5 h-5" />
