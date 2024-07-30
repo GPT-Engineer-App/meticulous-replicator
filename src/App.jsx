@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { navItems } from "./nav-items";
 import ChatPreview from "./pages/ChatPreview";
-import Navbar from "./components/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -13,7 +12,6 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <BrowserRouter>
-        <Navbar />
         <Routes>
           {navItems.map(({ to, page }) => (
             <Route key={to} path={to} element={page} />
