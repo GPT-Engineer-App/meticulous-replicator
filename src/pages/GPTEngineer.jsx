@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sparkles, Table2, Wrench, Paperclip, Zap, ArrowUp, ArrowUpCircle } from 'lucide-react';
@@ -8,6 +9,7 @@ const GPTEngineer = () => {
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -92,7 +94,10 @@ const GPTEngineer = () => {
               <Paperclip className="w-5 h-5 text-gray-400 cursor-pointer" />
               <Zap className="w-5 h-5 text-gray-400 cursor-pointer" />
               {isTyping && (
-                <ArrowUpCircle className="w-5 h-5 text-gray-400 cursor-pointer" />
+                <ArrowUpCircle
+                  className="w-5 h-5 text-gray-400 cursor-pointer"
+                  onClick={() => navigate('/chat-preview')}
+                />
               )}
             </div>
             {isTyping && (
