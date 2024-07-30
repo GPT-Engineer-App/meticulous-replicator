@@ -23,7 +23,17 @@ const Index = () => {
       <main className="flex-grow flex flex-col items-center justify-center text-center px-4">
         {/* Lovable Logo */}
         <div className="w-64 h-64 mb-8">
-          <div className="w-full h-full bg-gradient-to-br from-orange-400 via-pink-500 to-purple-600 rounded-full"></div>
+          <svg viewBox="0 0 100 100" className="w-full h-full">
+            <defs>
+              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#fb923c" />
+                <stop offset="50%" stopColor="#ec4899" />
+                <stop offset="100%" stopColor="#9333ea" />
+              </linearGradient>
+            </defs>
+            <path d="M50 88.9C25.5 72.3 11.1 57.8 6.8 45.5c-5.4-15.5 4.2-33.3 20.7-33.3 9.6 0 16.7 5.5 22.5 15.9 5.8-10.4 12.9-15.9 22.5-15.9 16.5 0 26.1 17.8 20.7 33.3-4.3 12.3-18.7 26.8-43.2 43.4z" 
+                  fill="url(#heartGradient)" />
+          </svg>
         </div>
 
         {/* Headline */}
