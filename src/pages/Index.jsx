@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import { Heart, ArrowUpRight, Twitter, Github, Discord, Youtube, Linkedin } from "lucide-react";
 
 const Index = () => {
   return (
@@ -72,26 +72,45 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 p-8">
-        <div className="flex justify-between items-start max-w-4xl mx-auto">
-          <div className="flex items-center">
-            <Heart className="w-6 h-6 mr-2" />
-            <span className="font-semibold">lovable</span>
-          </div>
-          <div className="flex space-x-16">
-            <div>
-              <h3 className="font-semibold mb-2">GPT Engineer</h3>
+      <footer className="mt-16 p-8 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-4 gap-8 mb-8">
+            <div className="col-span-1">
+              <div className="flex items-center mb-4">
+                <Heart className="w-6 h-6 mr-2" />
+                <span className="font-semibold text-xl">lovable</span>
+              </div>
+            </div>
+            <div className="col-span-1">
+              <h3 className="font-semibold mb-4 text-lg">GPT Engineer</h3>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-white">Overview</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white">For Everyone</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">For Developers</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">For Agencies</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white flex items-center">Get early access <ArrowUpRight className="w-4 h-4 ml-1" /></a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white flex items-center">Login <ArrowUpRight className="w-4 h-4 ml-1" /></a></li>
               </ul>
             </div>
-            <div>
-              <h3 className="font-semibold mb-2">Company</h3>
+            <div className="col-span-1">
+              <h3 className="font-semibold mb-4 text-lg">Company</h3>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-white">Vision</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white">News</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Careers</a></li>
               </ul>
+            </div>
+          </div>
+          <div className="flex justify-between items-center pt-8 border-t border-gray-800">
+            <div className="text-sm text-gray-400">
+              © 2024 Lovable. All rights reserved.
+            </div>
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-400 hover:text-white"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-400 hover:text-white"><Github className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-400 hover:text-white"><Discord className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-400 hover:text-white"><Youtube className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-400 hover:text-white"><Linkedin className="w-5 h-5" /></a>
             </div>
           </div>
         </div>
