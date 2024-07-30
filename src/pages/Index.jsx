@@ -1,4 +1,4 @@
-import { ArrowUpRight, Twitter, Github, Youtube, Linkedin } from "lucide-react";
+import { ArrowUpRight, Twitter, Github, Youtube, Linkedin, Heart } from "lucide-react";
 
 const Index = () => {
   return (
