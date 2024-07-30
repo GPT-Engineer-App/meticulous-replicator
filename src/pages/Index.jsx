@@ -18,7 +18,7 @@ const Index = () => {
         </div>
         <nav>
           <ul className="flex space-x-6">
-            <li><a href="#" className="hover:text-gray-300">GPT Engineer</a></li>
+            <li><a href="/gpt-engineer" className="hover:text-gray-300">GPT Engineer</a></li>
             <li><a href="#" className="hover:text-gray-300">Vision</a></li>
             <li><a href="#" className="hover:text-gray-300">News</a></li>
             <li><a href="#" className="hover:text-gray-300">Careers</a></li>
