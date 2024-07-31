@@ -126,7 +126,7 @@ const Index = () => {
 };
 
 const FeatureCard = ({ title, description }) => (
-  <div className="bg-gray-900 p-6 rounded-lg">
+  <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
     <h3 className="text-xl font-semibold mb-2 flex items-center">
       {title}
       <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
